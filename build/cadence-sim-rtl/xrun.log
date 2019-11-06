@@ -1,0 +1,47 @@
+xrun: 19.03-s013: (c) Copyright 1995-2019 Cadence Design Systems, Inc.
+TOOL:	xrun	19.03-s013: Started on Nov 06, 2019 at 03:39:06 EST
+xrun
+	../../src/loop.v
+	../../src/loop_tb.v
+	+gui
+	+access+rw
+Recompiling... reason: file '/afs/athena.mit.edu/user/c/h/chenkai/6374/IsingSamplerAsicDesign/src/loop.v' is newer than expected.
+	expected: Wed Nov  6 03:36:01 2019
+	actual:   Wed Nov  6 03:38:15 2019
+file: ../../src/loop.v
+	module worklib.loop:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		loop_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.loop:v <0x17fc60da>
+			streams:  10, words:  7093
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:              11      11
+		Scalar wires:            2       -
+		Vectored wires:          1       -
+		Always blocks:           2       2
+		Initial blocks:          5       5
+		Pseudo assignments:      2       2
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.loop_tb:v
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /mit/cadence/XCELIUM/1903/tools/xcelium/files/xmsimrc
+xcelium> 
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm loop_tb.L1.FSM loop_tb.L1.binary_tree_counter loop_tb.L1.clk loop_tb.L1.k loop_tb.L1.matrixInputs loop_tb.L1.matrix_output loop_tb.L1.readySignal loop_tb.L1.result_row loop_tb.L1.sums loop_tb.L1.term_number loop_tb.L1.x
+Created probe 1
+xcelium> run
+Simulation stopped via $stop(1) at time 600 NS + 0
+xcelium> 
